@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './assets/App.css';
+import { Galaxy } from './components';
+import { CanvasProvider } from './context/CanvasContext';
+import linkedIn from './assets/linkedIn.png';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <CanvasProvider>
+          <Galaxy />
+      </CanvasProvider>
+      <div className={'social'}>
         <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          href={'https://www.linkedin.com/in/chris-hammer-00'}
+          rel={'noreferrer'}
+          target={'_blank'}
         >
-          Learn React
+          <img 
+            alt={'Chris Hammer Linked In'}
+            src={linkedIn} 
+          />
         </a>
-      </header>
+        <p>Chris Hammer - Software Engineer</p>
+      </div>
     </div>
   );
 }
